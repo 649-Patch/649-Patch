@@ -43,6 +43,7 @@ How to change Rotom's Forme:
 You will need 1 script each for each of Rotom's formes, or a clever combination of scripts - I don't care which. The core part of what you need to do is have this script accessed by your calling script:
 
 *Example:*
+
 #dynamic 0xB2A000
  
 #org @main
