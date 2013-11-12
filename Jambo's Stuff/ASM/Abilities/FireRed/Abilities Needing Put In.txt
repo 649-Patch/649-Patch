@@ -1,0 +1,22 @@
+Gluttony
+Unburden
+Magic Guard
+No Guard
+Technician
+Leaf Guard
+Klutz (Needs a check in Fling BS)
+Mold Breaker
+Slow Start
+Frisk
+Pickpocket
+Contrary (Needs done better!)
+Defiant
+Healer (Need to fix icon clearing, otherwise works as intended)
+Friend Guard
+Harvest
+Telepathy
+Illusion
+Imposter
+Zen Mode
+Turboblaze
+Teravolt

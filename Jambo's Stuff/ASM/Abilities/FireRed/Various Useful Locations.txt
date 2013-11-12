@@ -1,0 +1,22 @@
+0x1E4FE - Battle Armour ability check. Other abilities can easily
+go here for critical hit calculation. Or not too far afterwards.
+
+0x1ACF0 - Static Routine
+
+0x1A8D4 - Table of routines of replies to being hit (after damage).
+
+0x1B050 - Table of routines of replies to the replies.
+
+0x1B398 - Forecast routine. Perhaps transform in here somewhere?
+
+0x14D38 - Swift Swim. Look at for speed boost for the Ice version of swift swim.
+
+0x1A426 - Rain Dish routine. Can be used to implement various other hacks.
+
+0x1A58C - Speed Boost. Can be used to find out how to do Moody.
+
+0x25194 - Fainting Routine
+0x1D8684 - Fainting Battle Script
+
+
+

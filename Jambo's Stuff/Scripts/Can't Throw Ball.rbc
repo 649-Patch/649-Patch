@@ -1,0 +1,4 @@
+#dynamic 0x760000
+
+#org @no
+= [player]: No! Two Pokémon make it\nimpossible to aim!

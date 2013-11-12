@@ -1,0 +1,25 @@
+#dynamic 0x76B000
+
+#include moves.bsh
+
+#org @main
+attackcanceler
+jumpifspecialstatusflag 0x0 0x400400C0 0x0 0x81D695E
+attackstring
+ppreduce
+setstatswap
+attackanimation
+waitanimation
+printstring 0x184
+waitmessage 0x40
+jumpifhalfword 0x0 move MOVE_POWERTRICK @extra
+goto 0x81D694E
+
+#org @extra
+jumpifspecialstatusflag 0x0 0x1000000 0x0 @unset
+setspecialstatusbit 0x0 0x1000000
+goto 0x81D694E
+
+#org @unset
+clearspecialstatusbit 0x0 0x1000000
+goto 0x81D694E

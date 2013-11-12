@@ -1,0 +1,35 @@
+#dynamic 0x76BB00
+
+#include abilities.bsh
+
+#org 0x76B9A8
+goto @new
+
+#org @new
+jumpiftoxicspikesnotset 0x876B9B1		//  0x0876B9A8
+jumpifstatus 0x0 0x88 0x876B9B1
+jumpiftype 0x0 TYPE_POISON @dealwithpoisontype
+jumpifability 0x0 ABILITY_IMMUNITY 0x876B9B1
+jumpifability 0x0 ABILITY_MAGICGUARD 0x876B9B1
+jumpiftype 0x0 TYPE_STEEL 0x876B9B1
+jumpifbyte 0x1 0x0203D802 0x0 @skip
+jumpifspecialstatusflag 0x0 0x100 0x0 @skip
+jumpiftype 0x0 TYPE_FLYING 0x876B9B1
+jumpifability 0x0 ABILITY_LEVITATE 0x876B9B1
+
+#org @skip
+settoxicspikeseffect		//  0x0876B9AE
+seteffecttarget		//  0x0876B9B0
+goto 0x876B9B1
+
+#org @dealwithpoisontype
+jumpifbyte 0x1 0x0203D802 0x0 @skip2
+jumpiftype 0x0 TYPE_FLYING 0x876B9B1
+jumpifability 0x0 ABILITY_LEVITATE 0x876B9B1
+
+#org @skip2
+cleartoxicspikes 0x0
+setword 0x0203C020 0x8FFFFFF
+printstring 0x184
+waitmessage 0x40
+goto 0x876B9B1

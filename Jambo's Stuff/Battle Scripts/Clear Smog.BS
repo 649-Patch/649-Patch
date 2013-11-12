@@ -1,0 +1,16 @@
+#dynamic 0x76B000
+
+#include moves.bsh
+
+#org @main
+jumpifhalfword 0x0 move MOVE_CLEARSMOG @clearsmog
+goto 0x81D6C72
+
+#org @clearsmog
+attackcanceler
+accuracycheck 0x81D695E 0x0
+attackstring
+ppreduce
+call 0x8763D71
+normalisebuffs2 0x0
+goto 0x81D6C78

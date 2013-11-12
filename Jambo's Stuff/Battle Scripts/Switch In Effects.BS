@@ -1,0 +1,70 @@
+#dynamic 0x76B000
+
+#org @main
+copyarray 0x02023D6C 0x02023FDB 0x1
+jumpifhalverset 0x0 0x40 @healingwish
+
+#org @next
+jumpifhalverset 0x0 0x80 @lunardance
+
+#org @next2
+jumpifhalverset 0x0 0x200 @end
+jumpifhalverset 0x0 0x10 @spikes
+
+#org @end
+sethalvermarker 0x0 0x200
+return
+
+#org @healingwish
+jumpifbyte 0x1 0x0203D8FE 0x0 @endhw
+sethealingwisheffect
+setword 0x0203C020 0x8FFFFFF
+graphicalhpupdate BANK_USER
+datahpupdate BANK_USER
+call @talk
+seteffectwithchancetarget
+
+#org @endhw
+clearhalvermarker 0x0 0x40
+goto @next
+
+#org @lunardance
+setlunardanceeffect
+setword 0x0203C020 0x8FFFFFF
+call @talk
+clearhalvermarker 0x0 0x80
+goto @next2
+
+#org @spikes
+jumpifspikesnotset @toxicspikes
+setspikesdamage
+setword 0x0203C020 0x8FFFFFF
+call @damageupdate
+
+#org @toxicspikes
+jumpiftoxicspikesnotset @stealthrock
+settoxicspikeseffect
+seteffecttarget
+
+#org @stealthrock
+jumpifstealthrocknotset @endspikes
+setstealthrockdamage
+setword 0x0203C020 0x8FFFFFF
+call @damageupdate
+
+#org @endspikes
+goto @end
+
+#org @damageupdate
+orword 0x2023DD0 0x100100
+graphicalhpupdate BANK_USER
+datahpupdate BANK_USER
+call @talk
+faintpokemon BANK_USER 0x0 0x0
+faintpokemon BANK_USER 0x1 0x81D8CA8
+return
+
+#org @talk
+printstring 0x184
+waitmessage 0x40
+return

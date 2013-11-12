@@ -1,0 +1,13 @@
+#dynamic 0x767f00
+
+#org @main
+attackcanceler
+attackstring
+ppreduce
+attackanimation
+waitanimation
+setword 0x0203C020 0xFFFFFF
+printstring 0x184
+waitmessage 0x40
+setspecialstatusbit 0x1 0x800000
+goto 0x1D694E

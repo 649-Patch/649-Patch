@@ -1,0 +1,29 @@
+#dynamic 0x76B000
+
+#include moves.bsh
+#include abilities.bsh
+
+#org @main
+attackcanceler
+jumpifhalfword 0x0 move MOVE_DRAGONTAIL @damage
+jumpifhalfword 0x0 move MOVE_CIRCLETHROW @damage
+attackstring
+ppreduce
+jumpifword 0x0 0x02022B4C 0x5 0x81D7DF2
+goto 0x81D6CB4
+
+#org @damage
+accuracycheck 0x81D695E 0x0
+attackstring
+ppreduce
+call 0x8763D71
+jumpiffainted 0x0 0x81D694E
+jumpifability 0x0 ABILITY_SUCTIONCUPS 0x81D694E
+jumpifsecondarystatus 0x0 0x1000000 0x81D694E
+jumpifspecialstatusflag 0x0 0x400 0x0 0x81D694E
+jumpifword 0x4 0x02022B4C 0x4 @skip
+jumpifcannotswitch 0x0 0x81D694E
+
+#org @skip
+jumpifword 0x0 0x02022B4C 0x5 0x81D694E
+forcerandomswitch 0x81D7DF2

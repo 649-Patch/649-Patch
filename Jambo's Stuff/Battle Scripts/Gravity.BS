@@ -1,0 +1,32 @@
+#dynamic 0x767900
+
+#org @main
+attackcanceller
+accuracycheck 0x81D695E 0x0
+attackstring
+ppreduce
+attackanimation
+waitanimation
+setbyte 0x0203D802 0x5
+setbyte 0x02023D72 0x0
+
+#org @loop
+jumpifarrayequal 0x02023D72 numberofpokemon 0x1 0x1D694E
+copyarray attacker 0x02023D72 0x1
+jumpifspecialstatusflag 0x0 0x40 0x1 @increment
+callasm 0x8FFFFFF
+jumpifsecondarystatus 0x0 0x1000 @clearattack
+
+#org @continue
+setword 0x0203C020 0x08DDDDDD
+printstring 0x184
+waitmessage 0x20
+
+#org @increment
+addbyte 0x02023D72 0x1
+goto @loop
+
+#org @clearattack
+callasm 0x8FFFFFF
+unhidepostattack
+goto @continue

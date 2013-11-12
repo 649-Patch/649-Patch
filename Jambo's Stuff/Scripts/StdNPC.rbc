@@ -1,0 +1,11 @@
+#dynamic 0x768000
+
+#org @main
+lock
+faceplayer
+msgbox @text MSG_FACE
+release
+end
+
+#org @text
+= This is a standard NPC message.\pIt is used to prevent the game from\ncrashing upon speaking to an NPC\lwithout a script.

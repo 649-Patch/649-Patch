@@ -1,0 +1,12 @@
+Forme Key
+01 - Wormadam/Shaymin/Meloetta - Type
+02 - Rotom - Type
+03 - Giratina/Arceus - No Type/Type
+04 - Basculin - No Type
+05 - Darmanitan - Type
+06 - Deerling/Sawsbuck - No Type
+07 - Burmy - No Type
+08 - Cherrim - No Type
+09 - Shellos/Gastrodon - No Type
+0A - Empty
+0B - Male/Female Sprites - No Type

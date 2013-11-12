@@ -1,0 +1,17 @@
+#dynamic 0x76B000
+
+#include moves.bsh
+
+#org @main
+attackcanceler
+jumpifspecialstatusflag 0x0 0x400400C0 0x0 0x81D695E
+attackstring
+ppreduce
+setstatsplit
+attackanimation
+waitanimation
+copyarray 0x02023FDB 0x02023D6B 0x1
+copyarray 0x02023D6E 0x02023D6C 0x1
+printstring 0x184
+waitmessage 0x40
+goto 0x81D694E

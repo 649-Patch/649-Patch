@@ -1,0 +1,13 @@
+#dynamic 0x769E00
+
+#include moves.bsh
+
+#org @main
+jumpifhalfword 0x0 move MOVE_BATONPASS 0x81D7995
+attackcanceler
+accuracycheck 0x81D695E 0x0
+attackstring
+ppreduce
+call 0x8763D71
+jumpifcannotswitch 0x81 0x81D694E
+goto 0x81D79A0

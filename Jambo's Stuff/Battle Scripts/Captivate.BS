@@ -1,0 +1,10 @@
+#dynamic 0x760000
+
+#include abilities.bsh
+
+#org @main
+attackcanceler
+jumpifability 0x0 ABILITY_OBLIVIOUS 0x761718
+jumpifcannotcaptivate 0x761718
+setbyte statchange 0xA4
+goto 0x1D6C1E

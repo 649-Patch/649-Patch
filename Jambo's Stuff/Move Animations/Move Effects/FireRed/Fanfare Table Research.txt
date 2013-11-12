@@ -1,0 +1,19 @@
+BPEE:
+
+Table    :    0x5248BC          
+
+Offset  1:    0A308C
+Offset  2:    0A3104
+Offset  3:    0A30E0
+Amount   :    0A310C 
+vba memory viewer: 3000F4E
+
+BPRE:
+
+Table    :    0x3Ac990
+
+Offset  1:    071C08
+Offset  2:    071C5C
+Offset  3:    071C80
+Amount   :    071C88
+vba memory viewer:

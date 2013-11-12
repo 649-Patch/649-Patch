@@ -1,0 +1,1 @@
+I have all of Jambo's ASM for the 649 patch in a big folder with all of the rest of his ASM. This involves some personal projects that he would rather not have released. Therefore, if we need a piece of specific ASM, I can go looking for it and commit it. There are over 600 asm and binary files to sort through in that folder, and I simply don't have the time.

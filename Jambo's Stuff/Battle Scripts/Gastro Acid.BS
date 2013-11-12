@@ -1,0 +1,106 @@
+#dynamic 0x767f00
+
+#include abilities
+
+#org @main
+jumpifhalfword 0x0 move 388 @worryseed
+jumpifhalfword 0x0 move 494 @entrainment
+jumpifhalfword 0x0 move 493 @simplebeam
+jumpifhalfword 0x0 move 285 @skillswap
+attackcanceller
+accuracycheck 0x81D695E 0x0
+jumpifability 0x0 0x0 0x761718
+jumpifability 0x0 ability_honeygather 0x761718
+jumpifability 0x0 ability_illuminate 0x761718
+jumpifability 0x0 ability_multitype 0x761718
+attackstring
+ppreduce
+attackanimation
+waitanimation
+callasm 0x8FDFDFD
+copyarray 0x02023FDB 0x02023D6C 0x1
+setword 0x0203C020 0x8FEFEFE
+call @printstring
+goto 0x1D694E
+
+#org @worryseed
+attackcanceller
+accuracycheck 0x81D695E 0x0
+jumpifability 0x0 ability_truant 0x761718
+jumpifability 0x0 ability_multitype 0x761718
+jumpifability 0x0 ability_insomnia 0x761718
+jumpifstatus 0x0 0x7 @clearsleep
+attackstring
+ppreduce
+attackanimation
+waitanimation
+
+#org @continue
+callasm 0x8FDFDFD
+copyarray 0x02023FDB 0x02023D6B 0x1
+copyarray 0x02023D6E 0x02023D6C 0x1
+setword 0x0203D020 0x8ABCDEF
+call @printstring
+goto 0x1D694E
+
+#org @clearsleep
+attackstring
+ppreduce
+attackanimation
+waitanimation
+setbyte 0x02023E85 0xA4
+setbyte 0x0203D804 0x7
+seteffectwithchancetarget
+copyarray 0x02023FDB 0x02023D6B 0x1
+copyarray 0x02023D6E 0x02023D6C 0x1
+setword 0x0203D020 0x8ABCDEF
+call @printstring
+goto @continue
+
+#org @entrainment
+attackcanceller
+accuracycheck 0x81D695E 0x0
+jumpifability 0x0 ability_truant 0x761718
+jumpifability 0x0 ability_multitype 0x761718
+jumpifability 0x0 ability_zenmode 0x761718
+attackstring
+ppreduce
+attackanimation
+waitanimation
+copyarray 0x02023FDB 0x02023D6B 0x1
+copyarray 0x02023D6B 0x02023D6C 0x1
+copyarray 0x02023D6C 0x02023FDB 0x1
+copyability 0x761718
+copyarray 0x02023FDB 0x02023D6B 0x1
+copyarray 0x02023D6B 0x02023D6C 0x1
+copyarray 0x02023FDB 0x02023D6B 0x1
+copyarray 0x02023D6E 0x02023D6C 0x1
+setword 0x0203D020 0x8ABCDEF
+call @printstring
+goto 0x1D694E
+
+#org @simplebeam
+attackcanceller
+accuracycheck 0x81D695E 0x0
+jumpifability 0x0 ability_truant 0x761718
+jumpifability 0x0 ability_multitype 0x761718
+attackstring
+ppreduce
+attackanimation
+waitanimation
+callasm 0x8FDFDFD
+copyarray 0x02023FDB 0x02023D6B 0x1
+copyarray 0x02023D6E 0x02023D6C 0x1
+setword 0x0203D020 0x8ABCDEF
+call @printstring
+goto 0x1D694E
+
+#org @skillswap
+attackcanceller
+jumpifability 0x0 ability_multitype 0x761718
+goto 0x1D82B0
+
+#org @printstring
+printstring 0x184
+waitmessage 0x40
+return

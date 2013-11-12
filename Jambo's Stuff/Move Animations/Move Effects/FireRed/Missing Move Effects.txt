@@ -1,0 +1,24 @@
+Attacks skipped:
+Pluck/Bug Bite (Needs berry consumption code) - Damage + Steals and Eats Opponent's Berry (If it has one)
+Payback (Awkward with detecting item use) - Damage (Doubles after certain circumstances) (229)
+Embargo (Awkward) - Prevents item use
+Fling - Damage (Throws held item)
+Heal Block - Blocks Healing
+Power Trick - (Note, needs handler for baton pass)
+Copycat - Similar to Mirror Move.
+Last Resort - Can't be used until all other moves have been used at least once.
+Magnet Rise/Telekinesis - User floats above ground. Becomes immune to certain things. (TK Makes moves always hit target (except 1 Hit KO moves)).
+Autotomize - Raises speed sharply and makes user 100kg lighter.
+Smack Down - Removes effect of Magnet Rise/Telekinesis. Makes Pokémon vulnerable to ground type moves, even if it normally isn't, but only on Flying types. Smack Down can hit and cancel a Pokémon who is flying or Bouncing.
+After You - Target will move next.
+Round - See Online
+Echoed Voice - See Online
+Sky Drop - See Online
+Bestow - Gifts item to target
+Ally Switch - Need to do SOMETHING with this (Currently set to splash's effect)
+
+Available Effect IDs:
+246 - 255
+
+Strings Required
+230

@@ -1,0 +1,11 @@
+#dynamic 0x767f00
+
+#include abilities
+
+#org @main
+attackcanceller
+accuracycheck 0x81D695E 0x0
+attackstring
+ppreduce
+setbyte 0x0203D803 0x1
+goto 0x762709

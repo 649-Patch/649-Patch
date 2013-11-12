@@ -1,0 +1,22 @@
+#dynamic 0x76A200
+
+#include moves.bsh
+
+#org @main
+jumpifhalfword 0x0 move MOVE_SPIKES @spikes
+jumpifhalfword 0x0 move MOVE_TOXICSPIKES @toxicspikes
+setword 0x0203C020 0x8FFFFFF
+printstring 0x184
+goto @waitmessage
+
+#org @spikes
+printstring 0x94
+goto @waitmessage
+
+#org @toxicspikes
+setword 0x0203C020 0x8FFFFFF
+printstring 0x184
+
+#org @waitmessage
+waitmessage 0x40
+goto 0x81D694E

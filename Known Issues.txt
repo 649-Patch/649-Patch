@@ -1,0 +1,2 @@
+-Formes are a serious problem. The code needs to be scapped and rewritten. I have a base for it already.
+-National Dex does not work. If anyone could look into some possibilities as to why, that would be great.

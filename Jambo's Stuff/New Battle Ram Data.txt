@@ -1,0 +1,16 @@
+649 Patch New Battle RAM
+
+Secondary effect location - 0203D800
+Gravity Counter - 0203D802
+Wonder Room Counter - 0203D803
+Telekinesis Counters - 0203D80B - 0203D80E
+Magic Room Counter - 0203D80F
+Trick Room Counter - 0203D809
+Lucky Chant Counters - 0203D813 - 0203D814
+Retaliate Counters - 0203D811 - 0203D812
+Tailwind Counters - 0203D815 - 0203D816
+Echoed Voice Cancellation Counter - 0203D818
+Damage Scale Location - 0203D819
+Combined Fire Pledge After Effect - 0203D808
+Combined Grass Pledge After Effect - 0203D80A
+Combined Water Pledge After Effect

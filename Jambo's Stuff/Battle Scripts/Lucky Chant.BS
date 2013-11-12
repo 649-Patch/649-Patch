@@ -1,0 +1,21 @@
+#dynamic 0x760000
+
+#org @main
+attackcanceler
+attackstring
+ppreduce
+attackanimation
+waitanimation
+jumpifbyte B_& attacker 0x1 @enemy
+setbyte 0x0203D813 0x5
+setword 0x0203C020 0x8762B41
+goto @continue
+
+#org @enemy
+setbyte 0x0203D814 0x5
+setword 0x203C020 0x8762B7A
+
+#org @continue
+printstring 0x184
+waitmessage 0x40
+goto 0x81D694E

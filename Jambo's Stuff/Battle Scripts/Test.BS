@@ -1,0 +1,8 @@
+#dynamic 0x790000
+
+#org @main
+printmessage @talk 0x40
+end
+
+#org @talk
+= Hello!

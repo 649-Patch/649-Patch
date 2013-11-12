@@ -1,0 +1,48 @@
+Ability Notes:
+
+Description Table:	0x0824FB08
+
+Last Pre-Battle Check for ability is Trace at 0x0801B536. This would be a good
+location to insert our new checks for abilities which have an immediate effect
+as soon as the Pokémon enters the battle.
+
+Last Pre-Attack Check is in the looping check... Will get more exact location 
+later.
+
+Last During Attack Check (Before it hits that is) is some stage after the
+looping check when LR = 0803FD3F and R7 = 4D. Somewhere after here is a good
+place to insert the new ability checks which can prevent an attack from
+taking place or change who the attack hits for example.
+
+There is a check at 0801A8BE which checks for all "after attack" effects of
+abilities of the attacked Pokémon's abilities to affect the attacking Pokémon.
+(which in Generation 3, fall between Ability 9 and Ability 56). This would
+be where we would need to add new checks for any abilities which have
+effects on the attacking Pokémon after an attack hits.
+
+There is then a later check on your the attacking Pokémon's abilities for
+abilities which prevent the ability above from having an effect on the attacking
+Pokémon. This check is at 0801B034 and encompasses all abilities from 7 up to
+72.
+
+The Synchronize check is at 0801B454.
+The Soundproof check is at 0801A604.
+The Sand Veil check is at 0801E088.
+The Water Absorb check is at 0801A6A4, with Volt Absorb shortly afterwards.
+The Flash Fire check is at 0801A6B2.
+The Pressure check is at 0801E2E0.
+The Battle Armor check is at 0801E4FE, with Shell Armor directly afterwards.
+The Thick Fat check is at 0803F03A.
+The "attacked" opponent checks for Hustle, Minus, Plus, Guts and Marvel Scale
+start at 0803F052. With the attacking check for Marvel Scale right after.
+Random Check against FD and FE at 0801B7FC.
+
+Suspect the following are part of the end of turn checks:
+
+The Forecast check is at 0801B394. This is where the forme check for Burmy
+would need to be inserted. And possibly some other checks.
+The Swift Swim check is at 08014D34, with Chlorophyll shortly afterwards.
+The Rain Dish check is at 0801A402, with Speed Boost shortly afterwards.
+There is a Truant check at 0801A418, with Shed Skin shortly afterwards.
+
+ROM Crashed at this stage XD.

@@ -1,0 +1,7 @@
+#dynamic 0x76BB00
+
+#org @main
+setword 0x0203C020 0x8FFFFFF
+printstring 0x184
+waitmessage 0x40
+goto 0x81d8b27

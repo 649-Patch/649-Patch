@@ -1,0 +1,10 @@
+#dynamic 0x769900
+
+#org @main
+attackcanceler
+accuracycheck 0x81D695E 0x0
+attackstring
+ppreduce
+jumpiftargetusingstatusmove 0x876171A
+jumpiftargetalreadymoved 0x876171A
+goto 0x1D6930

@@ -1,0 +1,3 @@
+Status Conditions
+Poison - 8
+Paralysis - 40

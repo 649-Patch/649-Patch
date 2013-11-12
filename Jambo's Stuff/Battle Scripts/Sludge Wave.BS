@@ -1,0 +1,44 @@
+#dynamic 0x76AF00
+
+#org @main
+attackcanceler
+setsecondaryeffectbytype
+attackstring
+ppreduce
+selectnexttarget
+
+#org @loop
+cmd25
+accuracycheck @miss 0x0
+calculatedamage
+attackanimation
+waitanimation
+missmessage
+cmd5c 0x0
+waitstate
+graphicalhpupdate 0x0
+datahpupdate 0x0
+critmessage
+waitmessage 0x40
+resultmessage
+waitmessage 0x40
+printstring 0x130
+waitmessage 0x1
+seteffectwithchancetarget
+faintpokemon 0x0 0x0 0x0
+setbyte 0x2023FD8 0x0
+cmd49 0x2 0x10
+jumpwhiletargetvalid @loop
+end
+
+#org @miss
+cmd76 0x8 0x3D
+pause 0x20
+cmd6
+missmessage
+resultmessage
+waitmessage 0x40
+setbyte 0x2023FD8 0x0
+cmd49 0x2 0x10
+jumpwhiletargetvalid @loop
+end

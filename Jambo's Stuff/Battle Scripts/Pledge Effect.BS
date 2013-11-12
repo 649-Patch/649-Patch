@@ -1,0 +1,75 @@
+#dynamic 0x768000
+
+#include moves.bsh
+
+#org @main
+attackcanceler
+jumpifhalfword 0x0 move MOVE_FIREPLEDGE @firepledge
+jumpifhalfword 0x0 move MOVE_GRASSPLEDGE @grasspledge
+jumpifspecialstatusflag 0x1 0x200000 0x0 @true1
+jumpifpartnerattack 0x0 MOVE_FIREPLEDGE @setuppledge
+jumpifpartnerattack 0x0 MOVE_GRASSPLEDGE @setuppledge
+goto 0x1D6927
+
+#org @true1
+jumpifpartnerattack 0x0 MOVE_FIREPLEDGE @combinedwaterfire
+jumpifpartnerattack 0x0 MOVE_GRASSPLEDGE @combinedwatergrass
+goto 0x1D6927
+
+#org @firepledge
+jumpifspecialstatusflag 0x1 0x200000 0x0 @true2
+jumpifpartnerattack 0x0 MOVE_WATERPLEDGE @setuppledge
+jumpifpartnerattack 0x0 MOVE_GRASSPLEDGE @setuppledge
+goto 0x1D6927
+
+#org @true2
+jumpifpartnerattack 0x0 MOVE_WATERPLEDGE @combinedwaterfire
+jumpifpartnerattack 0x0 MOVE_GRASSPLEDGE @combinedfiregrass
+goto 0x1D6927
+
+#org @grasspledge
+jumpifspecialstatusflag 0x1 0x200000 0x0 @true3
+jumpifpartnerattack 0x0 MOVE_WATERPLEDGE @setuppledge
+jumpifpartnerattack 0x0 MOVE_FIREPLEDGE @setuppledge
+goto 0x1D6927
+
+#org @true3
+jumpifpartnerattack 0x0 MOVE_WATERPLEDGE @combinedwatergrass
+jumpifpartnerattack 0x0 MOVE_FIREPLEDGE @combinedfiregrass
+goto 0x1D6927
+
+#org @setuppledge
+ppreduce
+setspecialstatusbit 0x1 0x200000
+setspecialstatusbit 0x3 0x200000
+copyarray 0x02023FDB 0x02023D6B 0x1
+copyarray 0x02023D6E 0x02023D6D 0x1
+setword 0x0203C020 0x87636BA
+printstring 0x184
+waitmessage 0x40
+goto 0x1D694E
+
+#org @combinedfiregrass
+sethalfword move MOVE_FIREPLEDGE
+setbyte attackmultiplier 0x2
+setbyte 0x0203D808 0x4
+goto @end
+
+#org @combinedwatergrass
+sethalfword move MOVE_GRASSPLEDGE
+setbyte attackmultiplier 0x2
+setbyte 0x0203D80A 0x4
+goto @end
+
+#org @combinedwaterfire
+sethalfword move MOVE_WATERPLEDGE
+setbyte attackmultiplier 0x2
+setbyte 0x0203D809 0x4
+
+#org @end
+setword 0x0203C020 0x87636D9
+printstring 0x184
+waitmessage 0x20
+accuracycheck 0x1D695E 0x0
+ppreduce
+goto 0x762704

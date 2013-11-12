@@ -1,0 +1,68 @@
+Ability Insert Locations:
+
+Simple and Contrary Routine: Change 0x28002 to 01 48 00 47 00 00 XX XX XX 08
+Victory Star Routine: Change 0x1DFCA to 01 4B 18 47 00 00 XX XX XX 08
+Adaptability Routine: Change 0x1E8AA to 01 4C 20 47 00 00 XX XX XX 08
+List 1 Routine: Change 0x3ED28 to 00 4B 18 47 XX XX XX 08
+Unaware Routine One: Change 0x3F2C4 to 00 48 00 47 XX XX XX 08
+Unaware Routine Two: Change 0x3F41C to 00 48 00 47 XX XX XX 08
+Tinted Lens, Filter and Solid Rock routine: Change 0x1E778 to 28 47 and 0x1E7A0 to XX XX XX 08
+Multiscale, Toxic Boost and Flare Boost routine: Change 0x3F0E0 to 00 4A 10 47 XX XX XX 08
+Poison Heal routine one: Change 0x1849E to 01 4A 10 47 00 00 XX XX XX 08
+Poison Heal routine two: Change 0x184E8 to 00 4D 28 47 XX XX XX 08
+Heatproof routine two: Change 0x18566 to 01 4A 10 47 00 00 XX XX XX 08
+Dry Skin (I), Ice Body, Poison Heal routine three: Change 0x1A3FC to 00 4D 28 47 XX XX XX 08
+Ice Body and Snow Cloak (II) routine: Change 0x28DF0 to 00 48 00 47 XX XX XX 08
+Snow Warning routine: Change 0x1A134 to 00 4C 20 47 XX XX XX 08
+Moxie* routine: Change 0x1A8B8 to 00 49 08 47 XX XX XX 08
+Sand Rush: Change 0x14D24 to 00 49 08 47 XX XX XX 08
+Snow Cloak (I) and Tangled Feet routine: Change 0x1E07C to 00 48 00 47 XX XX XX 08
+Dry Skin (III) routine: Change 0x1A6A2 to 01 48 00 47 00 00 XX XX XX 08
+Super Luck/Always Crit Hit (Move Effect!) routine: Change 0x1E52E to 01 4A 10 47 00 00 XX XX XX 08
+Sniper routine: Change 0x1E568 to 08 47 and 0x1E57C to XX XX XX 08
+List 2 routine: Change 0x1E8C0 to 00 4A 10 47 XX XX XX 08
+Sheer Force (II) routine: Change 0x1FFC2 to 01 49 08 47 00 00 XX XX XX 08
+Normalize: Called from Battle Script Callasm Change 0x1D6930 to 28 YY YY YY 08. Then change 0x08YYYYYY to F8 XX XX XX 08 04 05 06 07 09 0A 28 36 69 1D 08. Only works with the callasm command added to battle scripting.
+Light Metal and Heavy Metal - Change 0x2C902 to 01 49 08 47 00 00 XX XX XX 08.
+Steadfast: Called from Battle Script Callasm Change 0x1D90B8 to YY YY YY 08. Then change 0x08YYYYYY to 1E 01 50 ZZ ZZ ZZ 08 28 4E 69 1D 08. Then change 0x08ZZZZZZ to F8 XX XX XX 08 48 01 03 00 31 DB 3F 02 02 6B 3D 02 02 01 31 6E 3D 02 02 6B 3D 02 02 01 FA 20 C0 03 02 SS SS SS 08 10 84 01 12 40 00 28 4E 69 1D 08. Then finally insert string at 0x08SSSSSS. Note this requires BOTH callasm and store word.
+Storm Drain (Pulling in effect): Change 0x16014 to 00 49 08 47 XX XX XX 08.
+Prankster, Stall and Trick Room (Move Effect!) routine: Change 0x15016 to 20 47 and change 0x15060 to XX XX XX 08.
+Quick Feet (I) routine: Change 0x14DB0 to 00 48 00 47 XX XX XX 08
+Quick Feet (II) routine: Change 0x14E48 to 00 48 00 47 XX XX XX 08
+Quick Feet (III) routine: Change 0x14E8C to 00 48 00 47 XX XX XX 08
+Quick Feet (IV) routine: Change 0x14F28 to 00 48 00 47 XX XX XX 08
+Skill Link routine: Change 0x281D4 to 00 47 and change 0x281E4 to XX XX XX 08
+Analytic routine: Change 0x1F12C to 00 4C 20 47 XX XX XX 08
+Magic Bounce routine: Change 0x1D8D6 to 01 48 00 47 00 00 XX XX XX 08. Insert *** Battle Script. Point FF FF FF 08 to that BS.
+Infiltrator (I) routine: Change 0x1D8D6 to 00 4A 10 47 XX XX XX 08
+Infiltrator (II) routine: Change 0x1E5B4 to 00 48 00 47 XX XX XX 08
+Dry Skin (IV) and Solar Power (II): Change 0x1848A to 01 49 08 47 00 00 XX XX XX 08. Insert **** Battle Script. Point FF FF FF 08 to that BS.
+Regenerator routine: Change 0x2CCDC to 00 48 00 47 XX XX XX 08
+
+List 1 - Iron Fist, Rivalry, Heatproof, Dry Skin (II), Sand Force, Sheer Force, Reckless, Solar Power (I), Flower Gift
+List 2 - Lightningrod (II), Motor Drive, Storm Drain (II) and Sap Sipper
+* - Also has Iron Barbs and Poison Touch. Large Secondary Routine to deal with others **
+** - Mummy, Motor Drive (Speed Effect), Aftermath, Weak Armour, Cursed Body, Justified, Rattled, Sap Sipper (Attack Boost), Anger Point
+
+Tables:
+Moves affected by Reckless: 0x760A4C
+Moves affected by Iron Fist: 0x75ED20
+Moves affected by Sheer Force: 0x760A66
+
+***
+usedattackmsg
+ppremove (03)
+pause 0x0020
+storeword 0x0203C020 0x08YYYYYY
+copyarray 0x02023FDB 0x02023D6B 0x1
+copyarray 0x02023D6E 0x02023D6C 0x1
+msgdisplay 0x0184
+waitmessage 0x0040 (12 40 00)
+copyarray 0x02023D6C 0x02023D6B 0x1
+return1
+
+Where 0x08YYYYYY = Pointer to following string: FD 13 B4 E7 00 FD 14 FE EB D5 E7 00 D6 E3 E9 E2 D7 D9 D8 00 D6 D5 D7 DF 00 D6 ED 00 FD 1B AB FF
+
+****
+
+31DB3F02026B3D020201316E3D02026B3D020201FA20C003029D4F7608108401124000F8B94F76086401F8DD4F760835D03D0202000110000B010C01190100000000002474901D083EFD1300EBD5E7FED8D5E1D5DBD9D800D6ED00DDE8E700FD1BABFFFF0548007858214843044940180449C26C0A601022C26470476B3D0202E43B020200D0030204480078582148430349401803490A68C26470476B3D0202E43B020200D00302

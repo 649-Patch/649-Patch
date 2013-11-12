@@ -1,0 +1,49 @@
+#dynamic 0x76AD00
+
+#include abilities.bsh
+
+#org @main
+attackcanceler
+accuracycheck 0x81D695E 0x0
+attackstring
+ppreduce
+calculatedamage
+attackanimation
+waitanimation
+missmessage
+cmd5c 0x0
+waitstate
+graphicalhpupdate BANK_TARGET
+datahpupdate BANK_TARGET
+critmessage
+waitmessage DELAY_1SECOND
+resultmessage
+waitmessage DELAY_1SECOND
+faintpokemon 0x0 0x0 0x0
+setbyte loopcounter 0x0
+setbyte 0x02023DCC 0x0
+
+#org @loop
+jumpifarrayequal loopcounter numberofpokemon 0x1 @end
+copyarray attacker loopcounter 0x1
+jumpifarrayequal attacker target 0x1 @skip
+jumpifnotadjacent @skip
+jumpifability 0x1 ABILITY_MAGICGUARD @skip
+setflameburstdamage
+jumpifword 0x0 0x02023D50 0x0 @skip
+cmd5c 0x1
+waitstate
+graphicalhpupdate BANK_USER
+datahpupdate BANK_USER
+copyarray 0x02023FDB attacker 0x1
+setword 0x0203C020 0x8FFFFFF
+printstring 0x184
+waitmessage 0x20
+faintpokemon 0x1 0x0 0x0
+
+#org @skip
+addbyte loopcounter 0x1
+goto @loop
+
+#org @end
+goto 0x81D694E

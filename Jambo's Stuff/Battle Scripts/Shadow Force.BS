@@ -1,0 +1,32 @@
+#dynamic 0x76B000
+
+#include moves.bsh
+
+#org @main
+jumpifhalfword B_= 0x2023D4A MOVE_SHADOWFORCE @shadowforce		//  0x0876B07F
+goto 0x81D6926		//  0x0876B08B
+
+#org @shadowforce
+jumpifsecondarystatus 0x1 0x1000 @hit	//  0x0876B090
+jumpifword B_= 0x2023DD0 0x200 @hit
+setspecialstatusbit 0x1 0x40000000		//  0x0876B0A8
+setbyte 0x2023FD3 0x5		//  0x0876B0AE
+call 0x81D6F58		//  0x0876B0B4
+hidepreattack
+goto 0x81D694E		//  0x0876B0B9
+
+#org @hit
+attackcanceler		//  0x0876B0BE
+setbyte 0x2023E85 0xC		//  0x0876B0BF
+setbyte 0x2023FDC 0x1		//  0x0876B0C5
+clearstatus 0x1		//  0x0876B0CB
+orword 0x2023DD0 0x800		//  0x0876B0CD
+setbyte 0x2023E85 0x0		//  0x0876B0D6
+clearspecialstatusbit BANK_USER 0x40000000		//  0x0876B0DC
+accuracycheck @miss 0x0		//  0x081D7D79
+unhidepostattack		//  0x081D7D80
+goto 0x81D692E		//  0x081D7D81
+
+#org @miss
+unhidepostattack		//  0x081D7D86
+goto 0x81D695E	//  0x0876B0E3

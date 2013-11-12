@@ -1,0 +1,22 @@
+#dynamic 0x76A200
+
+#org @main
+attackcanceler
+accuracycheck 0x1D695E 0x0
+attackstring
+ppreduce
+jumpifsecondarystatus 0x0 0x20000000 @skip
+jumpiftargetimmune 0x876171A
+
+#org @skip
+attackanimation
+waitanimation
+setdamagetouserhp
+setability 0x1 0x0
+faintifabilitynotdamp
+setuserhptozero
+waitstate
+call 0x8763D77
+faintpokemon 0x1 0x0 0x0
+cmd25
+goto 0x81D694E

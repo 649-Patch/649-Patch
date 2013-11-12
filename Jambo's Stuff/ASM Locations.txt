@@ -1,0 +1,9 @@
+GetGenderFromSpeciesAndPID(ushort species, uint pid);
+
+Location - 0x769868
+Register to Use - 2
+
+Return Values -
+0x0 - Male
+0xFE - Female
+0xFF - Genderless

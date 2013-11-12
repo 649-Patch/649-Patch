@@ -1,0 +1,180 @@
+Alternate Forme Pointers:
+
+Burmy (F)
+1 - 80D12108
+2 - 1865EC08
+3 - 106CEC08
+
+(B)
+1 - BCD42108
+2 - 
+3 - 
+
+(NP)
+1 - 94D42108
+2 - 
+3 - 
+
+(SP)
+
+1 - 04D92108
+2 - 
+3 - 
+
+Wormadam (F)
+
+1 - 28D92108
+2 - BC73EC08
+3 - C07CEC08
+
+(B)
+1 - 18DD2108
+2 - 
+3 - 
+
+(NP)
+1 - F0DC2108
+2 - 
+3 - 
+
+(SP)
+
+1 - 4CE22108
+2 - 
+3 - 
+
+Cherrim (F)
+
+Overcast - 08C12208
+Sunny - C4E4EC08
+
+(B)
+
+Overcast - F8C42208
+Sunny - 
+
+(NP)
+
+Overcast - D0C42208
+Sunny - 
+
+(SP)
+
+Overcast - 9CC92208
+Sunny - 
+
+Shellos (F)
+
+West Sea - C0C92208
+East Sea - 8C85EC08
+
+(B)
+
+West Sea - 30CD2208
+East Sea - 
+
+(NP)
+
+West Sea - 08CD2208
+East Sea - 
+
+(SP)
+
+West Sea - 64D12208
+East Sea - 
+
+Gastrodon (F)
+
+West Sea - 8CD12208
+East Sea - B48DEC08
+
+(B)
+
+West Sea - 30D62208
+East Sea - 
+
+(NP)
+
+West Sea - 08D62208
+East Sea - 
+
+(SP)
+
+West Sea - D0DB2208
+East Sea - 
+
+Rotom (F)
+
+Normal - C8C5EB08
+Heat - FC97EC08
+Wash - ECA1EC08
+Frost - 24ACEC08
+Fan - B4B7EC08
+Mow - 48C2EC08
+
+(B)
+
+Normal - 4CC9EB08
+Heat - 
+Wash - 
+Frost - 
+Fan - 
+Mow - 
+
+(NP)
+
+Normal - 24C9EB08
+Heat - 
+Wash - 
+Frost - 
+Fan - 
+Mow - 
+
+(SP)
+
+Normal - 94CDEB08
+Heat - 
+Wash - 
+Frost - 
+Fan - 
+Mow - 
+
+Giratina (F)
+
+Altered - 101AEC08
+Origin - 60CBEC08
+
+(B)
+
+Altered - 5422EC08
+Origin - 
+
+(NP)
+
+Altered - 2C22EC08
+Origin - 
+
+(SP)
+
+Altered - A828EC08
+Origin - 
+
+Shaymin (F)
+
+Normal - 6051EC08
+Sky - D8D9EC08
+
+(B)
+
+Normal - 6454EC08
+Sky - 
+
+(NP)
+
+Normal - 3C54EC08
+Sky - 
+
+(SP)
+
+Normal - 6458EC08
+Sky - 

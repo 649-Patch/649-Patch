@@ -1,0 +1,13 @@
+#dynamic 0x76A400
+
+#org @main
+jumpifbyte B_& attacker 0x1 @enemy
+jumpifbyte B_!= 0x0203D840 0x1 0x81D6926
+
+#org @damage
+setbyte damagemultiplier 0x2
+goto 0x81D6926
+
+#org @enemy
+jumpifbyte B_= 0x0203D841 0x1 @damage
+goto 0x81D6926

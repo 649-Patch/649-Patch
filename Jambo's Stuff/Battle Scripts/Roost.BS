@@ -1,0 +1,8 @@
+#dynamic 0x760000
+
+#org @main
+jumpifhalfword B_!= move 355 0x1D6DBD
+jumpiftype 0x1 0x2 @roost
+goto 0x1D6DBD
+
+#org @roost

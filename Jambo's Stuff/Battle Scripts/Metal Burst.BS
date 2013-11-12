@@ -1,0 +1,11 @@
+#dynamic 0x768000
+
+#org @main
+attackcanceler
+mirrorcoatdamagecalculator @alt
+goto 0x1D7A8F
+
+#org @alt
+attackcanceler
+counterdamagecalculator 0x1D7DF0
+goto 0x1D7A8F

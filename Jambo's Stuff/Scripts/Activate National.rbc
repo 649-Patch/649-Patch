@@ -1,0 +1,5 @@
+#dynamic 0x760000
+
+#org @main
+special SP_FRNATIONAL
+end

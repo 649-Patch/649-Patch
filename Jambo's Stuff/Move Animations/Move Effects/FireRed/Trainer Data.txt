@@ -1,0 +1,26 @@
+Trainer table starts at x23EAF0 in FR. Entries are 40 (x28) bytes long.
+ 
+0x0 - Byte. Seems to control how much Pokemon data there is- 0 for default movesets, 1 for custom movesets, 2 for custom items, 3 for both.
+0x1 - Byte. Determines trainer's title. Note that in FR there are many duplicate titles that are holdovers from RSE.
+0x2 - Byte. If highest bit is set, the trainer's pokemon will be female if their gender ratio is 50%. Other bits influence intro music (and something else?)
+0x3 - Byte. Determines trainer's sprite.
+0x4 - Twelve bytes. Probably the trainer's name, I know it's stored around here somewhere. Might be something else too since names appear to be limited to ten bytes.
+0x10 - Half-word. Determines trainer's first item.
+0x12 - Ditto, second item
+0x14 - third item
+0x16 - fourth item
+0x18 - Word. Usually zero but set to one for a few seemingly arbitrary trainers- not sure why. Double battles?
+0x1C - Word. Actual AI strength- marked as Unknown in A-Trainer. Zero appears to be totally random, 1 is better but makes mistakes often, 7 plays as well as the AI is capable of. Some trainers in Emerald (Winona) have oddball values that need looked at. The per-Pokemon values marked as AI appear to control IVs somehow.
+0x20 - Word. Indicates number of Pokemon a trainer has.
+0x24 - Word. Pointer to the actual Pokemon data.
+ 
+The actual pokemon data, for trainers who have custom movesets+items:
+ 
+0x0 - Half-word. IVs, identified by A-Trainer as "AI Value".
+0x2 - Half-word, level.
+0x4 - Half-word, species.
+0x6 - Hold item, 0x0 for nothing.
+0x8 - Half-word, first attack.
+0xA - Half-word, second attack.
+0xC - ditto third
+0xE - ditto fourth

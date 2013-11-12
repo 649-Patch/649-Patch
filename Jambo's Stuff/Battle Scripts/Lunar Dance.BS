@@ -1,0 +1,20 @@
+#dynamic 0x76B000
+
+#include moves.bsh
+
+#org @main
+jumpifhalfword 0x1 move MOVE_MEMENTO 0x81D7F9F
+attackcanceler
+attackstring
+ppreduce
+jumpifcannotswitch 0x876171A
+setuserhptozero
+attackanimation
+waitanimation
+sethalvermarker 0x1 0x40
+jumpifhalfword 0x1 move MOVE_LUNARDANCE @skip
+sethalvermarker 0x1 0x80
+
+#org @skip
+fainpokemon 0x1 0x0 0x0
+goto 0x81D694E

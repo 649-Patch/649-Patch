@@ -1,0 +1,55 @@
+#dynamic 0x76B200
+
+#org @main
+attackcanceler
+attackstring
+ppreduce
+selectnexttarget
+setbyte 0x0203C024 0x0
+
+#org @loop
+cmd25
+jumpifnotypeequal @skip
+setbyte 0x0203C024 0x1
+accuracycheck @miss 0x0
+calculatedamage
+attackanimation
+waitanimation
+missmessage
+cmd5c 0x0
+waitstate
+graphicalhpupdate 0x0
+datahpupdate 0x0
+critmessage
+waitmessage 0x40
+resultmessage
+waitmessage 0x40
+printstring 0x130
+waitmessage 0x1
+faintpokemon 0x0 0x0 0x0
+
+#org @skip
+setbyte 0x2023FD8 0x0
+cmd49 0x2 0x10
+jumpwhiletargetvalid @loop
+goto @next
+
+#org @miss
+cmd76 0x8 0x3D
+pause 0x20
+cmd6
+missmessage
+resultmessage
+waitmessage 0x40
+setbyte 0x2023FD8 0x0
+cmd49 0x2 0x10
+jumpwhiletargetvalid @loop
+
+#org @next
+jumpifbyte 0x0 0x0203C024 0x1 @end
+printstring 0xE4
+waitmessage 0x40
+
+#org @end
+setbyte 0x0203C024 0x0
+end

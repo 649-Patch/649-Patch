@@ -1,0 +1,16 @@
+#dynamic 0x760000
+
+#org @main
+attackcanceler
+accuracycheck 0x81D695E 0x0
+attackstring
+ppreduce
+jumpiftargetalreadymoved 0x876171A
+attackanimation
+waitanimation
+setquash 0x0
+copyarray 0x02023FDB 0x02023D6C 0x1
+setword 0x0203C020 0x8FFFFFF
+printstring 0x184
+waitmessage 0x40
+goto 0x1D694E

@@ -1,0 +1,8 @@
+#dynamic 0x766A70
+
+#org @main
+msgbox @text MSG_SIGN
+end
+
+#org @text
+= This is a standard sign message.\pIt is used to prevent the game from\ncrashing upon reading a sign\lwithout an assigned script.

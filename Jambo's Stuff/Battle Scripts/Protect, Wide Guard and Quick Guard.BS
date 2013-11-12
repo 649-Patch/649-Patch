@@ -1,0 +1,26 @@
+#dynamic 0x768A00
+
+#include moves.bsh
+
+#org @main
+attackcanceler
+jumpifhalfword B_== move MOVE_PROTECT 0x1D7817
+jumpifhalfword B_== move MOVE_WIDEGUARD @wideguard
+callasm 0x8768BD9
+call @animation
+setspecialstatusbit 0x1 0x100000
+goto 0x1D694E
+
+#org @wideguard
+callasm 0x8768BD9
+call @animation
+setspecialstatusbit 0x1 0x400000
+setspecialstatusbit 0x3 0x400000
+goto 0x1D694E
+
+#org @animation
+attackstring
+ppreduce
+attackanimation
+waitanimation
+return
