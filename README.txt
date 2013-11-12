@@ -1,5 +1,10 @@
 ﻿649-Patch
 =========
+
+NOTE: This is a ROM BASE, not a hack. You cannot catch 649 Pokémon in this hack. It is a base that allows hackers to create hacks with all 649 in it. HOWEVER. THIS PATCH IS STILL IN BETA AND IS HIGHLY UNSTABLE. This patch is only available for testing purposes at this point. If any hacks are made with it, I will personally request their removal.
+
+
+
 Stuff from Jambo's thread on PC that I really don't want to type again:
 
 
