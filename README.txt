@@ -31,7 +31,6 @@ Included in this patch:
 *Useful Stuff for testers:*
 -All are found in the root of the Master branch.-
 
-~>std.rbh (CURRENTLY MISSING, CONTACTING JAMBO RIGHT NOW)
 ~>stditems.rbh
 ~>stdpoke.rbh
 ~>INI
