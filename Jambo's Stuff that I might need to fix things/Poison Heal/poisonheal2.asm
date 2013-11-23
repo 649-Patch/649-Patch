@@ -1,3 +1,5 @@
+/*This was inserted into the ROM at 0x75F04C.*/
+
 .text
 .align 2
 .thumb
