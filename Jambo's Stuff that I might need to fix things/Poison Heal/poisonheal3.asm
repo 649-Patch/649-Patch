@@ -1,3 +1,8 @@
+/*2 possible insert locations:
+0x0875f1B4
+0x08760640<-
+*/
+
 .text
 .align 2
 .thumb
