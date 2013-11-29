@@ -31,14 +31,27 @@ nextfive:	cmp r5, #0x3
 	b speedboost
 gotobl:	ldr r4, returntobl
 	bx r4
-poisonheal:	ldr r0, place
-	ldrb r0, [r0, #0x0]
+poisonheal:	
+    /*
+    This loads the current pokemon's status 
+    and then checks it to make sure that it 
+    is a type of poison. 0x8 is regular poison, 
+    0x80 is toxic.
+    */
+    ldr r0, place
+	ldrb r0, [r0, #0x0] 
 	mov r1, #0x58
 	mul r0, r1
 	ldr r1, place2
 	add r0, r0, r1
 	ldr r0, [r0, #0x2C]
 	cmp r0, #0x8
+	beq dostuff2
+	/*
+	Adding check for toxic poison. 
+	Nov 29, 2013
+	*/
+	cmp r0, #0x80
 	beq dostuff2
 	bl two
 dostuff2:	mov r0, #0x2
