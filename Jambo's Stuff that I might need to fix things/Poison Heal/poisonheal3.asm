@@ -1,6 +1,9 @@
 /*2 possible insert locations:
 0x0875f1B4
 0x08760640<-
+
+I tested at:
+0x0876C9D0
 */
 
 .text
@@ -38,7 +41,7 @@ poisonheal:
     is a type of poison. 0x8 is regular poison, 
     0x80 is toxic.
     */
-    ldr r0, place
+    	ldr r0, place
 	ldrb r0, [r0, #0x0] 
 	mov r1, #0x58
 	mul r0, r1
