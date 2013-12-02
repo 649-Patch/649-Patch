@@ -54,12 +54,9 @@ poisonheal:
 	ldr r0, [r0, #0x2C]
 	lsl r0, r0, #0x18
 	lsr r0, r0, #0x18
-	cmp r0, #0x8
+	cmp r0, #0x8 /*Check for poison.*/
 	beq dostuff2
-	/*
-	Adding check for toxic poison. 
-	*/
-	cmp r0, #0x80
+	cmp r0, #0x80 /*Adding check for toxic poison.*/
 	beq dostuff2
 	bl two
 
@@ -156,8 +153,8 @@ two:	ldr r4, twoloc
 three:	ldr r2, threeloc
 	bx r2
 .align
-place:	.word 0x02023D6B
-place2:	.word 0x02023C04
+place:		.word 0x02023D6B
+place2:		.word 0x02023C04
 returnone:	.word 0x0801A48D
 returntwo:	.word 0x0801A491
 returnff:	.word 0x0801A4A9
@@ -165,8 +162,8 @@ returnfff:	.word 0x0801A5D9
 returnffff:	.word 0x0801A58D
 returntobl:	.word 0x0801A40D
 returntobl2:	.word 0x0801A423
-oneloc:	.word 0x08019F19
-twoloc:	.word 0x0801BBAB
+oneloc:		.word 0x08019F19
+twoloc:		.word 0x0801BBAB
 threeloc:	.word 0x0801BC25
 randomlocation:	.word 0x081D92AB
 storage:	.word 0x02023D50
