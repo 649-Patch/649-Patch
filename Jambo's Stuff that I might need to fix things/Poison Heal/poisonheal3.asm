@@ -3,7 +3,11 @@
 0x08760640<-
 
 I tested at:
-0x0876C9D0
+0x0876CB88
+
+Current fighting pokemon has data 
+stored in the 02023C0C area. That 
+byte is HP.
 */
 
 .text
@@ -48,6 +52,8 @@ poisonheal:
 	ldr r1, place2
 	add r0, r0, r1
 	ldr r0, [r0, #0x2C]
+	lsl r0, r0, #0x18
+	lsr r0, r0, #0x18
 	cmp r0, #0x8
 	beq dostuff2
 	/*
@@ -57,9 +63,56 @@ poisonheal:
 	cmp r0, #0x80
 	beq dostuff2
 	bl two
-dostuff2:	mov r0, #0x2
+dostuff2: push {r0, r1}
+	ldr r0, place
+	ldr r0, [r0]
+	cmp r0, #0x1
+	beq load_opp_hp_1
+	/*
+	DOUBLE BATTLES.
+	1: right opp pokemon
+	2: player right pokemon
+	3: left opp pokemon
+	0: left player pokemon
+	0 & 1 are the same addresses.
+	2:02023CBC
+	3:02023D14
+	*/
+	cmp r0, #0x2
+	beq load_player_hp_2
+	cmp r0, #0x3
+	beq load_opp_hp_3
+load_player_hp_0:
+	ldr r0, place2
+	ldr r1, [r0, #0x8] /*Load max HP*/
+	ldr r0, [r0, #0xC] /*Load current HP*/
+	b continue_hp_check
+load_opp_hp_1:
+	ldr r0, place2
+	ldr r1, [r0, #0x60] /*Load max HP*/
+	ldr r0, [r0, #0x64] /*Load current HP*/
+	b continue_hp_check
+load_player_hp_2:
+	ldr r0, place2
+	add r0, r0, #0x88 /*Needed address is 0x110 bytes away.*/
+	add r0, r0, #0x88
+	ldr r1, [r0] /*Load max HP*/
+	ldr r0, [r0] /*Load current HP*/
+	b continue_hp_check
+load_opp_hp_3:
+	ldr r0, place2
+	ldr r1, [r0, #0x] /*Load max HP*/
+	ldr r0, [r0, #0x] /*Load current HP*/
+continue_hp_check:
+	cmp r0, r1
+	beq hp_is_equal
+	pop {r0, r1}
+	mov r0, #0x2
 	mov r10, r0
 	b skipbl3
+hp_is_equal:
+	pop {r0, r1}
+	bl two
 icebody:	mov r0, #0x80
 	mov r11, r0
 	mov r0, #0x1
