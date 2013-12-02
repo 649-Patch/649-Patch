@@ -58,61 +58,18 @@ poisonheal:
 	beq dostuff2
 	/*
 	Adding check for toxic poison. 
-	Nov 29, 2013
 	*/
 	cmp r0, #0x80
 	beq dostuff2
 	bl two
-dostuff2: push {r0, r1}
-	ldr r0, place
-	ldr r0, [r0]
-	cmp r0, #0x1
-	beq load_opp_hp_1
-	/*
-	DOUBLE BATTLES.
-	1: right opp pokemon
-	2: player right pokemon
-	3: left opp pokemon
-	0: left player pokemon
-	0 & 1 are the same addresses.
-	2:02023CBC
-	3:02023D14
-	*/
-	cmp r0, #0x2
-	beq load_player_hp_2
-	cmp r0, #0x3
-	beq load_opp_hp_3
-load_player_hp_0:
-	ldr r0, place2
-	ldr r1, [r0, #0x8] /*Load max HP*/
-	ldr r0, [r0, #0xC] /*Load current HP*/
-	b continue_hp_check
-load_opp_hp_1:
-	ldr r0, place2
-	ldr r1, [r0, #0x60] /*Load max HP*/
-	ldr r0, [r0, #0x64] /*Load current HP*/
-	b continue_hp_check
-load_player_hp_2:
-	ldr r0, place2
-	add r0, r0, #0x88 /*Needed address is 0x110 bytes away.*/
-	add r0, r0, #0x88
-	ldr r1, [r0] /*Load max HP*/
-	ldr r0, [r0] /*Load current HP*/
-	b continue_hp_check
-load_opp_hp_3:
-	ldr r0, place2
-	ldr r1, [r0, #0x] /*Load max HP*/
-	ldr r0, [r0, #0x] /*Load current HP*/
-continue_hp_check:
-	cmp r0, r1
-	beq hp_is_equal
-	pop {r0, r1}
+
+dostuff2: 
 	mov r0, #0x2
 	mov r10, r0
 	b skipbl3
-hp_is_equal:
+/*hp_is_equal:
 	pop {r0, r1}
-	bl two
+	bl two*/
 icebody:	mov r0, #0x80
 	mov r11, r0
 	mov r0, #0x1
@@ -162,7 +119,8 @@ skipbl2:	ldr r0, weatherloc
 	bl two
 skipbl3:	ldrh r0, [r4, #0x2C]
 	ldrh r3, [r4, #0x28]
-	bhi skipbl4
+	cmp r3, r0
+	blt skipbl4
 	bl two
 skipbl4:	mov r0, r8
 	strb r5, [r0, #0x0]
