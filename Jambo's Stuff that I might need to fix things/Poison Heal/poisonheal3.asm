@@ -67,9 +67,6 @@ dostuff2:
 	mov r0, #0x2
 	mov r10, r0
 	b skipbl3
-/*hp_is_equal:
-	pop {r0, r1}
-	bl two*/
 icebody:	mov r0, #0x80
 	mov r11, r0
 	mov r0, #0x1
