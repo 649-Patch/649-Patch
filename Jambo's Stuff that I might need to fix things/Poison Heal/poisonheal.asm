@@ -1,3 +1,7 @@
+/*
+Inserted into rom @08750000.
+*/
+
 .text
 .align 2
 .thumb
@@ -28,6 +32,6 @@ alt:	ldr r0, returntwo
 .align
 place:	.word 0x02023D6B
 place2:	.word 0x02023C04
-return:	.word 0x08018473
-returntwo:	.word 0x08018477
+return:	.word 0x08018C08
+returntwo:	.word 0x080184AF
 storage:	.word 0x02023D50
