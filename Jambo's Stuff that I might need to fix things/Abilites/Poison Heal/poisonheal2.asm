@@ -1,8 +1,10 @@
 /*
-This was inserted into the ROM at 0x75F04C.
+This was originaly inserted into the ROM at 0x75F04C.
 Branch @080184EC
 
 Tested @0876CB14
+
+New offset: 0x76C9D0
 */
 
 .text
@@ -60,7 +62,6 @@ beq_jump_address: ldrb r0,[r6]
 	ldr r1, [r5]
 	mul r0, r1
 	str r0, [r5]
-	ldr r0, .offset_0x081D9053
 	/*The rom's code branches here to bl to the routine that 
 	loads poison damage. This return will return just after that
 	line.*/
@@ -78,4 +79,3 @@ return:	.word 0x080184F5
 return: .word 0x08018C09
 returntwo:	.word 0x080184F9
 storage:	.word 0x02023D50
-.offset_0x081D9053: .word 0x081D9053

@@ -1,0 +1,16 @@
+649 Patch Change Log (Starting when Jambo gave me the patch)
+-----------------------------------------
+Version Numbers use the following format:
+
+X.YYY.ZZZ
+
+X = Release! (Hopfully someday...)
+YYY = New Feature, something that wasn't there before.
+ZZZ = Bug Fix
+-----------------------------------------
+
+0.0.1-
+Finished fixing Poison Heal
+
+0.0.0-
+The original one I started with.

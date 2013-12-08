@@ -1,3 +1,10 @@
+/*
+Inserted @ 0x08765768
+
+
+*/
+
+
 .text
 .align 2
 .thumb

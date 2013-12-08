@@ -8,6 +8,8 @@ I tested at:
 Current fighting pokemon has data 
 stored in the 02023C0C area. That 
 byte is HP.
+
+New offset: 0x76CA3C
 */
 
 .text
@@ -168,3 +170,4 @@ threeloc:	.word 0x0801BC25
 randomlocation:	.word 0x081D92AB
 storage:	.word 0x02023D50
 weatherloc:	.word 0x02023F1C
+

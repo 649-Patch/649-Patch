@@ -1,5 +1,5 @@
 /*
-Inserted into rom @08750000.
+Inserted into rom @0875F000.
 */
 
 .text
@@ -32,6 +32,6 @@ alt:	ldr r0, returntwo
 .align
 place:	.word 0x02023D6B
 place2:	.word 0x02023C04
-return:	.word 0x08018C08
+return:	.word 0x08018C09
 returntwo:	.word 0x080184AF
 storage:	.word 0x02023D50
