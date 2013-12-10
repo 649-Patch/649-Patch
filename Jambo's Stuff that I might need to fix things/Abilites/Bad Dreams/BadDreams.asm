@@ -1,3 +1,8 @@
+/*
+Inserted at 0x08765DC0
+
+*/
+
 .text
 .align 2
 .thumb
