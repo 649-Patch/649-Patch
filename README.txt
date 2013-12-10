@@ -121,5 +121,7 @@ Darthatron - For working out how to show the category images, and for sharing th
 crowlover - For finding so many little bugs and issues and reporting them to me. Helped massively!
 LCCoolJ95 - All the movesets and TM/HM Learnsets 
 
+
 karatekid552's Credits:
--
+mrdollsteak - Move animations and custom particle research
+doesntknowhowtoplay - Move animations, finding the new type chart

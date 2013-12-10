@@ -9,6 +9,12 @@ YYY = New Feature, something that wasn't there before.
 ZZZ = Bug Fix
 -----------------------------------------
 
+0.0.3-
+doesntknowhowtoplay fixed the type chart issue with electricity affecting Ground.
+
+0.0.2-
+Rock Polish got an animation! Courtasy of mrdollsteak and doesntknowhowtoplay.
+
 0.0.1-
 Finished fixing Poison Heal
 
