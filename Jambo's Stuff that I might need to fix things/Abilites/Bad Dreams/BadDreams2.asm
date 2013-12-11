@@ -1,3 +1,7 @@
+/*
+Inserted @ 0x08765EDC
+*/
+
 .text
 .align 2
 .thumb

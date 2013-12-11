@@ -1,4 +1,8 @@
 .text
+/*
+Inserted at 0x8765EB4
+*/
+
 .align 2
 .thumb
 .thumb_func

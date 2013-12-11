@@ -8,6 +8,8 @@ X = Release! (Hopfully someday...)
 YYY = New Feature, something that wasn't there before.
 ZZZ = Bug Fix
 -----------------------------------------
+0.0.4-
+Bug fix: issue #4
 
 0.0.3-
 doesntknowhowtoplay fixed the type chart issue with electricity affecting Ground.
