@@ -1,0 +1,2 @@
+649 Patch - 0x7586D8 -	Change the byte to 0x1 to re-enable double wild battles
+			once the glitches are fixed.
