@@ -1,3 +1,9 @@
+/*
+Pointer @75EA4C
+
+Inserted at 0x08762504
+*/
+
 .text
 .align 2
 .thumb

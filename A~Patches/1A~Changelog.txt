@@ -8,6 +8,11 @@ X = Release! (Hopfully someday...)
 YYY = New Feature, something that wasn't there before.
 ZZZ = Bug Fix
 -----------------------------------------
+0.1.0-
+Extended the particle table!
+	credit to mrdollsteak for his tutorial.
+	I also left room for 24 entries after the table by writing you all a nice message.:P
+
 0.0.4-
 Bug fix: issue #4
 
