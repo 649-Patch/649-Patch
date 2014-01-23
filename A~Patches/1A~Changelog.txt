@@ -8,6 +8,9 @@ X = Release! (Hopfully someday...)
 YYY = New Feature, something that wasn't there before.
 ZZZ = Bug Fix
 -----------------------------------------
+0.1.1-
+Big fix: Snow Warning text now correctly displays banked Pokemon and ability
+
 0.1.0-
 Extended the particle table!
 	credit to mrdollsteak for his tutorial.
